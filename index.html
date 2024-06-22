@@ -1,29 +1,69 @@
-<!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  margin-left: 200px;
-  background: #5d9ab2 url("img_tree.png") no-repeat top left;
-}
-
-.center_div {
-  border: 1px solid gray;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  background-color: #d0f0f6;
-  text-align: left;
-  padding: 8px;
-}
-</style>
-</head>
-<body>
-
-<div class="center_div">
-  <h1>Hello World!</h1>
-  <p>This example contains some advanced CSS methods you may not have learned yet. But, we will explain these methods in a later chapter in the tutorial.</p>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-blue-500 text-white">
+  <div class="flex items-center justify-between p-4">
+    <div class="flex items-center">
+      <img src="https://placehold.co/50x50" alt="Logo" class="mr-2">
+      <span class="text-xl font-bold">Spiketacular Spikes</span>
+    </div>
+    <nav class="space-x-4">
+      <a href="#" class="underline">Home</a>
+      <a href="#" class="hover:underline">About</a>
+      <a href="#" class="hover:underline">Staff</a>
+      <a href="#" class="hover:underline">Programs</a>
+    </nav>
+  </div>
 </div>
-
-</body>
+<div class="flex flex-wrap p-4">
+  <div class="w-full md:w-1/2 p-4">
+    <div class="border p-4">
+      <h2 class="text-xl font-bold mb-2">Welcome to Spiketacular Spikes!</h2>
+      <p>Ottawa's biggest volleyball club. We are open 24/7, open to all ages</p>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 p-4">
+    <img src="https://placehold.co/600x300" alt="Photo of people playing volleyball">
+  </div>
+</div>
+<div class="flex flex-wrap bg-blue-500 text-white p-4">
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-xl font-bold mb-2">Want to join us?</h2>
+    <p>At Spiketacular Spikes, we offer a variety of programs and classes with different skill levels</p>
+    <div class="space-y-2">
+      <a href="#" class="block bg-white text-black text-center py-2 rounded">View Programs</a>
+      <a href="#" class="block bg-white text-black text-center py-2 rounded">Book a class</a>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 p-4">
+    <h2 class="text-xl font-bold mb-2">Want to book a court?</h2>
+    <p>At Spiketacular Spikes, we offer 3 courts for you to book for you and your family and friends</p>
+    <div class="space-y-2">
+      <a href="#" class="block bg-white text-black text-center py-2 rounded">View Courts</a>
+      <a href="#" class="block bg-white text-black text-center py-2 rounded">Book a court</a>
+    </div>
+  </div>
+</div>
+<div class="flex flex-wrap bg-blue-700 text-white p-4">
+  <div class="w-full md:w-1/3 p-4">
+    <h2 class="text-xl font-bold mb-2">Contacts</h2>
+    <p>Phone Number: 613 843 4328</p>
+    <p>Email: spike@volleyball.ca</p>
+  </div>
+  <div class="w-full md:w-1/3 p-4">
+    <h2 class="text-xl font-bold mb-2">Location</h2>
+    <p>2451 Riverside Dr</p>
+    <p>K1H 7X7</p>
+    <p>Ottawa, Ontario</p>
+  </div>
+  <div class="w-full md:w-1/3 p-4">
+    <h2 class="text-xl font-bold mb-2">Open Hours</h2>
+    <p>Open 24 hours</p>
+  </div>
+</div>
+  </body>
 </html>

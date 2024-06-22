@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-blue-500 text-white p-4 flex items-center">
+      <img src="https://placehold.co/50x50" alt="Logo" class="mr-4">
+      <h1 class="text-xl font-bold">Spiketacular Spikes</h1>
+      <nav class="ml-auto space-x-4">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="underline">Staff</a>
+        <a href="#" class="hover:underline">Programs</a>
+      </nav>
+    </header>
+    <div class="flex flex-1">
+      <aside class="w-1/4 p-4 border-r">
+        <h2 class="text-lg font-bold mb-4">Filter by Staff</h2>
+        <div class="mb-4">
+          <h3 class="font-semibold">Role:</h3>
+          <label class="block">
+            <input type="checkbox" class="role-filter" value="Coach"> Coach
+          </label>
+          <label class="block">
+            <input type="checkbox" class="role-filter" value="Manager"> Manager
+          </label>
+        </div>
+        <div>
+          <h3 class="font-semibold">Level:</h3>
+          <label class="block">
+            <input type="checkbox" class="level-filter" value="Recreational"> Recreational
+          </label>
+          <label class="block">
+            <input type="checkbox" class="level-filter" value="Competitive"> Competitive
+          </label>
+        </div>
+      </aside>
+      <main class="flex-1 p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Manager" data-level="Recreational">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: John John</p>
+          <p>Role: Manager</p>
+          <p>Level: Recreational</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Manager" data-level="Competitive">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Kimmy Tim</p>
+          <p>Role: Manager</p>
+          <p>Level: Competitive</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Manager" data-level="Competitive">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Gil Albert</p>
+          <p>Role: Manager</p>
+          <p>Level: Competitive</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Coach" data-level="Competitive">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Chim Dim</p>
+          <p>Role: Coach</p>
+          <p>Level: Competitive</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Coach" data-level="Competitive">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Lucy Nucy</p>
+          <p>Role: Coach</p>
+          <p>Level: Competitive</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Coach" data-level="Competitive">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Kim Kim</p>
+          <p>Role: Coach</p>
+          <p>Level: Competitive</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Coach" data-level="Recreational">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Son Sonny</p>
+          <p>Role: Coach</p>
+          <p>Level: Recreational</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Coach" data-level="Recreational">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Jim Jum</p>
+          <p>Role: Coach</p>
+          <p>Level: Recreational</p>
+        </div>
+        <div class="staff-card border p-4 w-full h-72 overflow-hidden" data-role="Manager" data-level="Recreational">
+          <img src="https://placehold.co/100x150" alt="Staff Picture" class="mb-4">
+          <p>Name: Lola Bola</p>
+          <p>Role: Manager</p>
+          <p>Level: Recreational</p>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.role-filter, .level-filter').forEach(filter => {
+      filter.addEventListener('change', () => {
+        const selectedRoles = Array.from(document.querySelectorAll('.role-filter:checked')).map(cb => cb.value);
+        const selectedLevels = Array.from(document.querySelectorAll('.level-filter:checked')).map(cb => cb.value);
+
+        document.querySelectorAll('.staff-card').forEach(card => {
+          const role = card.getAttribute('data-role');
+          const level = card.getAttribute('data-level');
+          const roleMatch = selectedRoles.length === 0 || selectedRoles.includes(role);
+          const levelMatch = selectedLevels.length === 0 || selectedLevels.includes(level);
+
+          if (roleMatch && levelMatch) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
